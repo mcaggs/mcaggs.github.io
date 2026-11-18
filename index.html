@@ -1,0 +1,1276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mahesh Agarwal | Design portfolio: agentic commerce</title>
+  <meta name="description" content="Product and experience design leader. Case studies in agentic commerce, conversational shopping, checkout and payments, and human-in-the-loop AI from Tagor AI, Walmart Connect, and TikTok." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mahesh Agarwal | Design portfolio: agentic commerce" />
+  <meta property="og:description" content="Three case studies on designing trust when software acts on someone's behalf: Tagor AI, Walmart Connect, and TikTok." />
+  <meta name="theme-color" content="#13233A" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS v4 (browser build). No build step needed for GitHub Pages. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: "Bricolage Grotesque", ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+      --color-ink: #13233A;
+      --color-muted: #55606E;
+      --color-line: #DDE1DA;
+      --color-stone: #F1F3EF;
+      --color-approve: #1D7A57;
+      --color-approve-tint: #E4F2EB;
+      --color-review: #8F5E12;
+      --color-review-tint: #FBF1DF;
+    }
+
+    @layer base {
+      html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+      body { @apply bg-white text-ink antialiased; font-size: 1.0625rem; line-height: 1.6; font-variation-settings: "opsz" 14; }
+      :focus-visible { outline: 3px solid var(--color-approve); outline-offset: 3px; border-radius: 6px; }
+      h1, h2, h3 { text-wrap: balance; }
+      p, li { text-wrap: pretty; }
+    }
+
+    @layer components {
+      .display { font-variation-settings: "opsz" 96, "wdth" 88; letter-spacing: -0.02em; line-height: 1.03; font-weight: 700; }
+      .display-sm { font-variation-settings: "opsz" 48, "wdth" 90; letter-spacing: -0.02em; line-height: 1.1; font-weight: 680; }
+      .wrap { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
+      .btn-primary { @apply inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-[0.95rem] font-semibold transition-colors bg-ink text-white hover:bg-[#0c182a]; }
+      .btn-quiet { @apply inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-[0.95rem] font-semibold transition-colors border border-line text-ink hover:border-ink; }
+      .annot { @apply inline-flex items-center gap-1.5 rounded-md border border-dashed border-review/50 bg-review-tint px-2 py-0.5 text-[0.75rem] font-medium text-review; }
+      .takeaway { @apply mt-4 flex gap-3 rounded-xl bg-approve-tint px-4 py-3 font-semibold text-ink; }
+      .case-section { @apply scroll-mt-28 border-t border-line pt-7 mt-8; }
+      .case-section h3 { @apply mb-3 flex items-center gap-2.5 text-2xl; font-variation-settings: "opsz" 48, "wdth" 90; letter-spacing: -0.02em; line-height: 1.1; font-weight: 680; }
+      .case-list { @apply space-y-2.5 pl-0; }
+      .case-list li { @apply relative pl-5 text-[1rem] leading-relaxed text-ink/90; }
+      .case-list li::before { content: ""; @apply absolute left-0 top-[0.62em] h-1.5 w-1.5 rounded-full bg-ink/40; }
+      .chip { @apply rounded-full border border-line bg-white px-3 py-1 text-sm font-medium text-ink hover:border-ink; }
+      .flow-node { @apply rounded-lg border border-line bg-white px-3 py-2 text-sm font-medium leading-snug; }
+
+      /* Imagery and icons */
+      .icon-chip { @apply inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-approve-tint text-approve; }
+      .icon-chip-dark { @apply inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-approve-tint; }
+      .photo { @apply w-full rounded-2xl bg-stone object-cover; }
+      .case-section h3 svg { @apply h-6 w-6 text-approve; }
+
+      /* Storyboards */
+      .sb-grid { @apply mt-6 divide-y divide-line border-y border-line; }
+      .sb-row { @apply grid gap-3 py-7 md:grid-cols-[13rem_minmax(0,1fr)] md:gap-x-5 lg:grid-cols-[15rem_26rem_minmax(0,1fr)]; }
+      .sb-head { @apply flex flex-wrap items-center gap-x-3 gap-y-2 md:col-span-2 lg:col-span-3; }
+      .sb-scene { @apply m-0; }
+      .sb-scene img { @apply aspect-[16/10] w-full rounded-xl bg-stone object-cover md:aspect-auto md:h-[194px]; }
+      .sb-text { @apply md:col-span-2 lg:col-span-1; }
+      .sb-cols { @apply hidden pt-2 text-sm font-semibold text-muted lg:grid lg:grid-cols-[15rem_26rem_minmax(0,1fr)] lg:gap-x-5; }
+      .sb-title { @apply flex items-center gap-2.5 text-[1.05rem] font-bold leading-snug; }
+      .sb-num { @apply inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-ink text-sm font-bold text-white; }
+      .sb-wire-wrap { @apply overflow-x-auto rounded-xl border border-line bg-stone p-2; }
+      .sb-wire { @apply relative min-h-[176px] min-w-[300px] overflow-hidden sm:h-[176px] rounded-lg border border-line bg-white text-[12px] leading-[1.35] text-ink; font-variation-settings: "opsz" 12; }
+      .sb-desc { @apply text-[0.98rem] leading-relaxed text-ink/90; }
+      .sb-trust { @apply mt-2 flex gap-2 text-[0.95rem] font-semibold leading-snug; }
+      .wb-bar { @apply flex h-[22px] items-center justify-between border-b border-line bg-stone px-2.5 text-[10px] font-semibold text-muted; }
+      .wb-body { @apply space-y-1.5 p-2.5; }
+      .wb-user { @apply ml-auto w-fit max-w-[84%] rounded-xl rounded-br-sm bg-ink px-2 py-1 text-white; }
+      .wb-bot { @apply w-fit max-w-[94%] rounded-xl rounded-bl-sm border border-line px-2 py-1; }
+      .wb-chip { @apply inline-block rounded-full border border-line px-2 py-px text-[10.5px] font-medium; }
+      .wb-chip-on { @apply inline-block rounded-full border border-ink bg-ink px-2 py-px text-[10.5px] font-medium text-white; }
+      .wb-btn { @apply inline-block rounded-full bg-approve px-2.5 py-0.5 text-[10.5px] font-semibold text-white; }
+      .wb-btn-q { @apply inline-block rounded-full border border-line bg-white px-2.5 py-0.5 text-[10.5px] font-semibold; }
+      .wb-flag { @apply inline-flex shrink-0 items-center rounded border border-dashed border-review/50 bg-review-tint px-1.5 text-[10.5px] text-review; }
+      .wb-ok { @apply font-semibold text-approve; }
+      .wb-card { @apply rounded-md border border-line p-1.5; }
+      .wb-cite { @apply inline-block rounded bg-approve-tint px-1 text-[10px] font-semibold text-approve; }
+      .wb-note { @apply rounded-md bg-stone px-2 py-1 text-[11px]; }
+    }
+  </style>
+
+  <style>
+    /* Plain CSS for things utilities can't express cleanly */
+    html.modal-open { overflow: hidden; }
+    dialog.case {
+      margin: auto; padding: 0; border: 0; color: inherit;
+      width: min(62rem, calc(100vw - 2rem));
+      max-width: none; max-height: calc(100dvh - 2rem);
+      border-radius: 1.25rem; overflow-y: auto; overscroll-behavior: contain;
+      box-shadow: 0 30px 80px -20px rgb(19 35 58 / 0.45);
+    }
+    dialog.case::backdrop { background: rgb(19 35 58 / 0.55); backdrop-filter: blur(3px); }
+    dialog.case[open] { animation: case-in 220ms cubic-bezier(.2,.7,.2,1); }
+    @keyframes case-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    @media (max-width: 640px) {
+      dialog.case { width: 100vw; max-height: 100dvh; height: 100dvh; border-radius: 0; }
+    }
+    .demo-step { transition: opacity 200ms ease, transform 200ms ease; }
+    .demo-hidden { display: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      dialog.case[open] { animation: none; }
+      .demo-step { transition: none; }
+    }
+    .skip-link { position: absolute; left: -9999px; top: 0.75rem; }
+    .skip-link:focus { left: 0.75rem; z-index: 60; background: #13233A; color: #fff; padding: 0.5rem 0.9rem; border-radius: 0.5rem; }
+    details > summary { list-style: none; cursor: pointer; }
+    details > summary::-webkit-details-marker { display: none; }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-line/70 bg-white/90 backdrop-blur">
+    <div class="wrap flex h-16 items-center justify-between gap-4">
+      <a href="#top" class="text-[1.05rem] font-bold tracking-tight">Mahesh Agarwal</a>
+      <nav aria-label="Primary" class="flex items-center gap-5 text-[0.95rem] font-medium text-muted sm:gap-7">
+        <a class="hover:text-ink" href="#work">Case studies</a>
+        <a class="hidden hover:text-ink sm:inline" href="#principles">Principles</a>
+        <a class="hidden hover:text-ink sm:inline" href="#leadership">Leadership</a>
+        <a class="hover:text-ink" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section id="top" class="wrap grid gap-12 pt-14 pb-20 lg:grid-cols-12 lg:gap-10 lg:pt-20 lg:pb-28">
+      <div class="lg:col-span-7 lg:pt-4">
+        <p class="text-[1rem] font-medium text-muted">Product and experience design leader, agentic commerce</p>
+        <h1 class="display mt-5 text-[2.6rem] sm:text-6xl lg:text-[4.4rem]">
+          People let software shop for them only when they can see it, steer it, and take it back.
+        </h1>
+        <p class="mt-7 max-w-[38rem] text-lg leading-relaxed text-ink/85">
+          I've spent 20 years shipping commerce, search, and AI assistant experiences at Microsoft, Amazon, TikTok, and Walmart Connect, and 12 of them hiring and leading the product design, content design, research, and product teams behind them.
+        </p>
+
+        <dl class="mt-10 grid max-w-[40rem] grid-cols-2 gap-x-8 gap-y-6 border-t border-line pt-7 sm:grid-cols-4">
+          <div class="flex flex-col">
+            <dt class="text-sm leading-snug text-muted">Designers, PMs and TPMs hired and grown</dt>
+            <dd class="order-first text-3xl font-bold tracking-tight">30+</dd>
+          </div>
+          <div class="flex flex-col">
+            <dt class="text-sm leading-snug text-muted">Self-serve activation, Walmart Connect</dt>
+            <dd class="order-first text-3xl font-bold tracking-tight">+45%</dd>
+          </div>
+          <div class="flex flex-col">
+            <dt class="text-sm leading-snug text-muted">Purchase intent, TikTok</dt>
+            <dd class="order-first text-3xl font-bold tracking-tight">+37%</dd>
+          </div>
+          <div class="flex flex-col">
+            <dt class="text-sm leading-snug text-muted">Peak-season sales, Amazon mobile</dt>
+            <dd class="order-first text-3xl font-bold tracking-tight">4x</dd>
+          </div>
+        </dl>
+
+        <div class="mt-10 flex flex-wrap gap-3">
+          <a class="btn-primary" href="#work">Read the case studies</a>
+          <a class="btn-quiet" href="mailto:mcaggs@gmail.com">Email me</a>
+        </div>
+      </div>
+
+      <!-- Hero pattern demo: a working sketch of the approval pattern -->
+      <div class="lg:col-span-5">
+        <figure class="rounded-[1.4rem] border border-line bg-stone p-3 sm:p-4" aria-labelledby="demo-caption">
+          <div class="rounded-2xl bg-white shadow-[0_1px_0_rgb(19_35_58/0.06),0_12px_30px_-18px_rgb(19_35_58/0.35)]">
+            <div class="flex items-center justify-between border-b border-line px-4 py-3">
+              <span class="text-sm font-semibold">Shopping assistant</span>
+              <span class="text-xs text-muted">Pattern sketch</span>
+            </div>
+
+            <ol class="space-y-5 px-4 py-5 text-[0.95rem]" aria-label="Example conversation">
+              <li>
+                <span class="annot">Goal, in the shopper's words</span>
+                <p class="ml-auto mt-2 w-fit max-w-[85%] rounded-2xl rounded-br-md bg-ink px-3.5 py-2 text-white">
+                  Trail shoes for mud, wide fit, under $140.
+                </p>
+              </li>
+
+              <li>
+                <span class="annot">Inspectable ranking</span>
+                <div class="mt-2 max-w-[92%] rounded-2xl rounded-bl-md border border-line px-3.5 py-3">
+                  <p>Three pairs meet all three. I ranked them on grip and fit in verified reviews.</p>
+                  <ul class="mt-3 divide-y divide-line rounded-lg border border-line text-sm">
+                    <li class="flex items-center justify-between gap-3 px-3 py-2"><span>Fellrun Trail</span><span class="text-muted">$119, runs narrow</span></li>
+                    <li class="flex items-center justify-between gap-3 bg-approve-tint/60 px-3 py-2"><span class="font-semibold">Ridgeline Grip</span><span class="font-medium text-approve">$129, best match</span></li>
+                    <li class="flex items-center justify-between gap-3 px-3 py-2"><span>Basin XT</span><span class="text-muted">$138, heavier</span></li>
+                  </ul>
+                  <details class="mt-2 text-sm">
+                    <summary class="font-medium text-approve underline decoration-approve/30 underline-offset-4">Why these three?</summary>
+                    <p class="mt-1.5 text-muted">Filtered to wide sizes under $140, then ranked by grip ratings. Two pairs were dropped because they don't come in wide.</p>
+                  </details>
+                </div>
+              </li>
+
+              <li>
+                <span class="annot">Nothing is bought without a yes</span>
+                <div class="mt-2 max-w-[92%] rounded-2xl rounded-bl-md border border-line px-3.5 py-3">
+                  <p id="demo-question">
+                    Buy Ridgeline Grip in
+                    <label class="sr-only" for="demo-size">Size</label>
+                    <select id="demo-size" class="mx-0.5 rounded-md border border-line bg-white px-1.5 py-0.5 font-semibold">
+                      <option>9.5 wide</option>
+                      <option selected>10 wide</option>
+                      <option>10.5 wide</option>
+                    </select>
+                    for $129 with your saved card?
+                  </p>
+                  <div id="demo-actions" class="demo-step mt-3 flex flex-wrap gap-2">
+                    <button id="demo-approve" type="button" class="inline-flex items-center gap-1.5 rounded-full bg-approve px-4 py-1.5 text-sm font-semibold text-white hover:bg-[#166447]">
+                      Approve purchase
+                    </button>
+                    <span class="self-center text-xs text-muted">You can undo until it ships.</span>
+                  </div>
+                  <div id="demo-done" class="demo-step demo-hidden mt-3 rounded-xl bg-approve-tint px-3 py-2.5 text-sm">
+                    <p class="flex items-start gap-2 font-medium">
+                      <svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg>
+                      <span id="demo-done-text">Order placed. You can undo until it ships tomorrow.</span>
+                    </p>
+                    <button id="demo-undo" type="button" class="mt-2 rounded-full border border-approve/40 bg-white px-3.5 py-1 text-sm font-semibold text-approve hover:border-approve">Undo order</button>
+                  </div>
+                  <p id="demo-status" class="sr-only" aria-live="polite"></p>
+                </div>
+                <span class="annot mt-2">Reversible after the fact</span>
+              </li>
+            </ol>
+          </div>
+          <figcaption id="demo-caption" class="px-2 pt-3 text-sm text-muted">
+            Try it: approve, then undo. An illustrative sketch of the patterns in my case studies, not a shipped product screen.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+
+    <!-- Moments: the shopper journey in four photos -->
+    <section id="moments" class="pb-20 lg:pb-24" aria-labelledby="moments-title">
+      <div class="wrap">
+        <div class="flex flex-wrap items-end justify-between gap-x-10 gap-y-3">
+          <h2 id="moments-title" class="display max-w-2xl text-3xl sm:text-4xl">Four moments where a shopper decides whether to trust</h2>
+          <p class="max-w-sm text-muted">The journey I design for, from the first sentence to the box at the door.</p>
+        </div>
+        <ol class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <li class="relative">
+            <img src="img/journey-ask.jpg" alt="A woman on a sofa typing on her phone" class="photo aspect-[4/3] sm:aspect-[4/5]" loading="lazy" width="1000" height="667" />
+            <div class="absolute inset-x-3 bottom-3 flex items-start gap-3 rounded-xl bg-white/95 p-3 shadow-sm">
+              <span class="icon-chip h-9 w-9"><svg aria-hidden="true" class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" /> <path d="M7 11h10" /> <path d="M7 15h6" /> <path d="M7 7h8" /></svg></span>
+              <div><p class="font-bold leading-tight"><span class="text-muted">1</span> Ask</p><p class="mt-0.5 text-sm leading-snug text-ink/80">Say what you want, in your own words.</p></div>
+            </div>
+          </li>
+          <li class="relative">
+            <img src="img/journey-compare.jpg" alt="A shopper in a grocery aisle checking her phone beside her cart" class="photo aspect-[4/3] sm:aspect-[4/5]" loading="lazy" width="1000" height="667" />
+            <div class="absolute inset-x-3 bottom-3 flex items-start gap-3 rounded-xl bg-white/95 p-3 shadow-sm">
+              <span class="icon-chip h-9 w-9"><svg aria-hidden="true" class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18" /> <path d="m19 8 3 8a5 5 0 0 1-6 0zV7" /> <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1" /> <path d="m5 8 3 8a5 5 0 0 1-6 0zV7" /> <path d="M7 21h10" /></svg></span>
+              <div><p class="font-bold leading-tight"><span class="text-muted">2</span> Compare</p><p class="mt-0.5 text-sm leading-snug text-ink/80">Weigh options you didn't have to browse for.</p></div>
+            </div>
+          </li>
+          <li class="relative">
+            <img src="img/journey-pay.jpg" alt="A woman holding a credit card and her phone" class="photo aspect-[4/3] sm:aspect-[4/5]" loading="lazy" width="1000" height="667" />
+            <div class="absolute inset-x-3 bottom-3 flex items-start gap-3 rounded-xl bg-white/95 p-3 shadow-sm">
+              <span class="icon-chip h-9 w-9"><svg aria-hidden="true" class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2" /> <line x1="2" x2="22" y1="10" y2="10" /> <path d="M6 14h2" /></svg></span>
+              <div><p class="font-bold leading-tight"><span class="text-muted">3</span> Approve and pay</p><p class="mt-0.5 text-sm leading-snug text-ink/80">Say yes once, and know what that yes covers.</p></div>
+            </div>
+          </li>
+          <li class="relative">
+            <img src="img/journey-after.jpg" alt="Delivered packages on a front step" class="photo aspect-[4/3] sm:aspect-[4/5]" loading="lazy" width="1000" height="667" />
+            <div class="absolute inset-x-3 bottom-3 flex items-start gap-3 rounded-xl bg-white/95 p-3 shadow-sm">
+              <span class="icon-chip h-9 w-9"><svg aria-hidden="true" class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12" /> <path d="m16 17 2 2 4-4" /> <path d="M21 11.127V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.729l7 4a2 2 0 0 0 2 .001l1.32-.753" /> <path d="M3.29 7 12 12l8.71-5" /> <path d="m7.5 4.27 8.997 5.148" /></svg></span>
+              <div><p class="font-bold leading-tight"><span class="text-muted">4</span> After the purchase</p><p class="mt-0.5 text-sm leading-snug text-ink/80">Track it, change it, or take it back.</p></div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Case studies -->
+    <section id="work" class="border-t border-line bg-stone/60 py-20 lg:py-24" aria-labelledby="work-title">
+      <div class="wrap">
+        <div class="max-w-2xl">
+          <h2 id="work-title" class="display text-4xl sm:text-5xl">Three case studies</h2>
+          <p class="mt-4 text-lg text-ink/80">Each opens to a 30-second read: problem, research and constraints, key trade-offs, final solution, and results, plus a six-frame UX storyboard of the solution.</p>
+        </div>
+
+        <ol class="mt-12 divide-y divide-line border-y border-line bg-white/0">
+          <!-- Tagor -->
+          <li class="grid gap-6 py-10 lg:grid-cols-12 lg:gap-10">
+            <div class="lg:col-span-5">
+              <img src="img/cover-tagor.jpg" alt="A woman at her kitchen table weighing a decision on her phone" class="photo aspect-[4/3] lg:aspect-auto lg:h-full lg:min-h-[19rem]" loading="lazy" width="1600" height="1067" />
+            </div>
+            <div class="flex flex-col lg:col-span-7">
+              <p class="mb-3 text-sm leading-snug text-muted"><span class="text-base font-bold text-ink">Tagor AI</span><br />Founder &amp; Chief Product &amp; Technology Officer, 2025 to present</p>
+              <h3 class="display-sm text-[1.75rem]">An AI co-pilot people can trust with their money</h3>
+              <p class="mt-3 leading-relaxed text-ink/85">Investors and advisors won't act on AI financial advice they can't inspect, and regulators won't allow advice that can't be explained. As founder and CPTO, I set the experience vision and built the design system and human-in-the-loop patterns for delegation, approval, and recovery across Investor and Advisor Co-Pilot, cutting concept-to-shipped lead time by 40%.</p>
+              <div class="mt-auto flex flex-wrap items-center justify-between gap-4 border-t border-line pt-5 lg:mt-6">
+                <p class="flex items-baseline gap-3"><span class="text-4xl font-bold tracking-tight">−40%</span><span class="text-sm text-muted">concept-to-shipped lead time</span></p>
+                <button type="button" class="btn-primary" data-open="tagor" aria-haspopup="dialog">Open case study</button>
+              </div>
+            </div>
+          </li>
+
+          <!-- Walmart -->
+          <li class="grid gap-6 py-10 lg:grid-cols-12 lg:gap-10">
+            <div class="lg:col-span-5">
+              <img src="img/cover-walmart.jpg" alt="A smiling businesswoman working on her laptop in a bright office" class="photo aspect-[4/3] lg:aspect-auto lg:h-full lg:min-h-[19rem]" loading="lazy" width="1600" height="1067" />
+            </div>
+            <div class="flex flex-col lg:col-span-7">
+              <p class="mb-3 text-sm leading-snug text-muted"><span class="text-base font-bold text-ink">Walmart Connect</span><br />Head of Product, Commerce Onboarding, Wallet/Credit &amp; Payments, 2025 to present</p>
+              <h3 class="display-sm text-[1.75rem]">One journey from sign-up to payment, across six surfaces</h3>
+              <p class="mt-3 leading-relaxed text-ink/85">Advertisers joining Walmart Connect crossed six fragmented surfaces, from self-serve sign-up through credit, wallet, billing, and support, and activation took days. As Head of Product, I set one cross-surface experience strategy and shipped conversational onboarding and an agentic billing assistant with explainable credit decisions and approval gates, lifting self-serve activation 45% (days to hours) and cutting billing-friction tickets by about 20%.</p>
+              <div class="mt-auto flex flex-wrap items-center justify-between gap-4 border-t border-line pt-5 lg:mt-6">
+                <p class="flex items-baseline gap-3"><span class="text-4xl font-bold tracking-tight">+45%</span><span class="text-sm text-muted">self-serve activation</span></p>
+                <button type="button" class="btn-primary" data-open="walmart" aria-haspopup="dialog">Open case study</button>
+              </div>
+            </div>
+          </li>
+
+          <!-- TikTok -->
+          <li class="grid gap-6 py-10 lg:grid-cols-12 lg:gap-10">
+            <div class="lg:col-span-5">
+              <img src="img/cover-tiktok.jpg" alt="A creator setting up her phone and ring light to film" class="photo aspect-[4/3] lg:aspect-auto lg:h-full lg:min-h-[19rem]" loading="lazy" width="1600" height="1067" />
+            </div>
+            <div class="flex flex-col lg:col-span-7">
+              <p class="mb-3 text-sm leading-snug text-muted"><span class="text-base font-bold text-ink">TikTok</span><br />Product Lead, Conversational AI, Commerce Discovery &amp; Creative, 2024 to 2025</p>
+              <h3 class="display-sm text-[1.75rem]">Conversational discovery, from a stated goal to shoppable creative</h3>
+              <p class="mt-3 leading-relaxed text-ink/85">Brands and sellers had to work across four separate TikTok surfaces to turn a business goal into content that sells. As product lead, I directed the experience strategy for TikTok Symphony Assistant and co-led design, content, and research to ship natural-language goal setting, catalog-grounded recommendations, and generative merchandising, driving a 37% lift in purchase intent and 38% in brand favorability.</p>
+              <div class="mt-auto flex flex-wrap items-center justify-between gap-4 border-t border-line pt-5 lg:mt-6">
+                <p class="flex items-baseline gap-3"><span class="text-4xl font-bold tracking-tight">+37%</span><span class="text-sm text-muted">purchase intent</span></p>
+                <button type="button" class="btn-primary" data-open="tiktok" aria-haspopup="dialog">Open case study</button>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Principles -->
+    <section id="principles" class="py-20 lg:py-24" aria-labelledby="principles-title">
+      <div class="wrap">
+        <div class="max-w-2xl">
+          <h2 id="principles-title" class="display text-4xl sm:text-5xl">What earns confidence when software acts for a shopper</h2>
+          <p class="mt-4 text-lg text-ink/80">Five properties I design for. Each is a pattern I've shipped, not a slogan.</p>
+        </div>
+
+        <div class="mt-12 overflow-hidden rounded-2xl border border-line">
+          <div class="hidden grid-cols-12 gap-6 bg-stone px-6 py-3 text-sm font-semibold text-muted md:grid">
+            <span class="col-span-3">Property</span>
+            <span class="col-span-4">What the shopper gets</span>
+            <span class="col-span-5">Where I've shipped it</span>
+          </div>
+          <dl class="divide-y divide-line">
+            <div class="grid gap-2 px-6 py-6 md:grid-cols-12 md:gap-6">
+              <dt class="flex items-center gap-3 text-xl font-bold md:col-span-3"><span class="icon-chip"><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" /> <circle cx="12" cy="12" r="3" /></svg></span>Legible</dt>
+              <dd class="md:col-span-4 md:self-center">They can tell what the system is doing and why, in plain words.</dd>
+              <dd class="text-muted md:col-span-5 md:self-center">Confidence framing and plain-language suitability disclosures at Tagor AI. Credit and risk explanations at the moment of decision at Walmart Connect.</dd>
+            </div>
+            <div class="grid gap-2 px-6 py-6 md:grid-cols-12 md:gap-6">
+              <dt class="flex items-center gap-3 text-xl font-bold md:col-span-3"><span class="icon-chip"><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5H3" /> <path d="M12 19H3" /> <path d="M14 3v4" /> <path d="M16 17v4" /> <path d="M21 12h-9" /> <path d="M21 19h-5" /> <path d="M21 5h-7" /> <path d="M8 10v4" /> <path d="M8 12H3" /></svg></span>Controllable</dt>
+              <dd class="md:col-span-4 md:self-center">They set the limits, and friction rises only where the stakes do.</dd>
+              <dd class="text-muted md:col-span-5 md:self-center">Step-up approvals at Tagor AI. Approval gates and supervision checkpoints at Walmart Connect. Preview-and-approve controls at TikTok.</dd>
+            </div>
+            <div class="grid gap-2 px-6 py-6 md:grid-cols-12 md:gap-6">
+              <dt class="flex items-center gap-3 text-xl font-bold md:col-span-3"><span class="icon-chip"><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m8 11 2 2 4-4" /> <circle cx="11" cy="11" r="8" /> <path d="m21 21-4.3-4.3" /></svg></span>Inspectable</dt>
+              <dd class="md:col-span-4 md:self-center">Every recommendation can show the evidence behind it.</dd>
+              <dd class="text-muted md:col-span-5 md:self-center">Source-cited answers at Tagor AI. Catalog-grounded recommendations at TikTok. AI transparency standards at Amazon.</dd>
+            </div>
+            <div class="grid gap-2 px-6 py-6 md:grid-cols-12 md:gap-6">
+              <dt class="flex items-center gap-3 text-xl font-bold md:col-span-3"><span class="icon-chip"><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14 4 9l5-5" /> <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11" /></svg></span>Reversible</dt>
+              <dd class="md:col-span-4 md:self-center">Mistakes are cheap to undo, so trying is cheap too.</dd>
+              <dd class="text-muted md:col-span-5 md:self-center">One-click action reversal at Tagor AI. Guided error recovery at Walmart Connect. Automated anomaly recovery at TikTok. Hallucination recovery flows at Amazon.</dd>
+            </div>
+            <div class="grid gap-2 px-6 py-6 md:grid-cols-12 md:gap-6">
+              <dt class="flex items-center gap-3 text-xl font-bold md:col-span-3"><span class="icon-chip"><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <circle cx="12" cy="12" r="6" /> <circle cx="12" cy="12" r="2" /></svg></span>True to intent</dt>
+              <dd class="md:col-span-4 md:self-center">The system works toward the goal they stated, not one it inferred for itself.</dd>
+              <dd class="text-muted md:col-span-5 md:self-center">Progressive goal expression at Tagor AI. Natural-language goal setting at TikTok. User-controllable privacy and transparency indicators in Microsoft Teams.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership -->
+    <section id="leadership" class="border-t border-line bg-ink py-20 text-white lg:py-24" aria-labelledby="leadership-title">
+      <div class="wrap">
+        <div class="grid gap-12 lg:grid-cols-12">
+          <div class="lg:col-span-5">
+            <h2 id="leadership-title" class="display text-4xl sm:text-5xl">How I lead design organizations</h2>
+            <p class="mt-4 text-lg text-white/75">12+ years of people leadership across large, matrixed organizations where no single team owns the whole experience.</p>
+            <img src="img/team.jpg" alt="A product team mapping ideas with sticky notes on a glass wall" class="photo mt-8 aspect-[16/10]" loading="lazy" width="1400" height="788" />
+          </div>
+          <div class="space-y-9 lg:col-span-7">
+            <div>
+              <h3 class="flex items-center gap-3 text-xl font-bold"><span class="icon-chip-dark"><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <path d="M16 3.128a4 4 0 0 1 0 7.744" /> <path d="M22 21v-2a4 4 0 0 0-3-3.87" /> <circle cx="9" cy="7" r="4" /></svg></span>Build teams where design, content and research are peers</h3>
+              <p class="mt-2 text-white/80 sm:pl-[3.25rem]">I've hired, mentored and grown 30+ designers, PMs and TPMs. At Tagor AI I built the founding team across product design, content design, UX research and AI engineering. At Walmart Connect I lead embedded content design and UX research pods; at TikTok I co-led all three disciplines.</p>
+            </div>
+            <div>
+              <h3 class="flex items-center gap-3 text-xl font-bold"><span class="icon-chip-dark"><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" /> <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" /> <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" /></svg></span>Run quality as a system, not a heroic review</h3>
+              <p class="mt-2 text-white/80 sm:pl-[3.25rem]">Figma design-system libraries with shared tokens and conversational components, a weekly multidisciplinary critique, and analytics-backed experiments before anything scales.</p>
+            </div>
+            <div>
+              <h3 class="flex items-center gap-3 text-xl font-bold"><span class="icon-chip-dark"><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z" /> <path d="M15 5.764v15" /> <path d="M9 3.236v15" /></svg></span>Put design in the roadmap, not downstream of it</h3>
+              <p class="mt-2 text-white/80 sm:pl-[3.25rem]">At Walmart Connect I partner as a peer with Engineering, Finance and Legal VPs on multi-quarter platform roadmaps. At Microsoft I influenced multi-year direction across Teams, SharePoint and Azure Cognitive Services.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="mt-20 text-xl font-bold">Career</h3>
+        <ol class="mt-6 grid gap-px overflow-hidden rounded-2xl bg-white/15 sm:grid-cols-2 lg:grid-cols-4">
+          <li class="bg-ink p-5"><p class="text-sm text-white/60">2025 to present</p><p class="mt-1 font-bold">Tagor AI</p><p class="mt-1 text-sm text-white/75">Founder &amp; CPTO. Human-in-the-loop AI co-pilots for regulated financial advice.</p></li>
+          <li class="bg-ink p-5"><p class="text-sm text-white/60">2025 to present</p><p class="mt-1 font-bold">Walmart Connect</p><p class="mt-1 text-sm text-white/75">Head of Product. Onboarding, wallet, credit and payment experiences.</p></li>
+          <li class="bg-ink p-5"><p class="text-sm text-white/60">2024 to 2025</p><p class="mt-1 font-bold">TikTok</p><p class="mt-1 text-sm text-white/75">Product Lead. Symphony Assistant and commerce discovery.</p></li>
+          <li class="bg-ink p-5"><p class="text-sm text-white/60">2022 to 2024</p><p class="mt-1 font-bold">Amazon</p><p class="mt-1 text-sm text-white/75">Principal PM. Conversational assistants and generative visuals; CTRs up to +40%.</p></li>
+          <li class="bg-ink p-5"><p class="text-sm text-white/60">2017 to 2022</p><p class="mt-1 font-bold">Microsoft</p><p class="mt-1 text-sm text-white/75">Principal PM. Industry-first multimodal AI in Teams, built on Fluent Design.</p></li>
+          <li class="bg-ink p-5"><p class="text-sm text-white/60">2016 to 2017</p><p class="mt-1 font-bold">Snapdeal</p><p class="mt-1 text-sm text-white/75">Associate Director. Marketplace recommendations, comparison and merchant tools.</p></li>
+          <li class="bg-ink p-5"><p class="text-sm text-white/60">2007 to 2016</p><p class="mt-1 font-bold">Amazon India and Cisco</p><p class="mt-1 text-sm text-white/75">Mobile shopping discovery (4x peak-season sales) and a 0-to-1 targeted TV platform.</p></li>
+          <li class="bg-ink p-5"><p class="text-sm text-white/60">Foundation</p><p class="mt-1 font-bold">HCI research</p><p class="mt-1 text-sm text-white/75">BITS Pilani, 2 patents, peer-reviewed tactile and visual interface papers, Frost &amp; Sullivan award.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Fit -->
+    <section id="fit" class="py-20 lg:py-24" aria-labelledby="fit-title">
+      <div class="wrap">
+        <div class="max-w-2xl">
+          <h2 id="fit-title" class="display text-4xl sm:text-5xl">Where this meets Microsoft Commerce</h2>
+          <p class="mt-4 text-lg text-ink/80">One shopper journey across Copilot, Bing and Edge, and the work I'd bring to each part of it.</p>
+        </div>
+        <div class="mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-2">
+          <div class="bg-white p-6">
+            <span class="icon-chip mb-4"><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></svg></span>
+            <h3 class="text-xl font-bold">Copilot: shopping in conversation</h3>
+            <p class="mt-2 text-ink/80">Goal expression, products represented in dialogue, and setup completed without leaving the conversation, as shipped in TikTok Symphony Assistant. Approval and recovery patterns from Tagor AI.</p>
+          </div>
+          <div class="bg-white p-6">
+            <span class="icon-chip mb-4"><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34" /> <circle cx="11" cy="11" r="8" /></svg></span>
+            <h3 class="text-xl font-bold">Bing: shopping inside search</h3>
+            <p class="mt-2 text-ink/80">Sponsored discovery and ML recommendations on Amazon mobile, comparison flows at Snapdeal, and catalog-scale conversational comparison at Amazon.</p>
+          </div>
+          <div class="bg-white p-6">
+            <span class="icon-chip mb-4"><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2" /> <line x1="2" x2="22" y1="10" y2="10" /> <path d="M6 14h2" /></svg></span>
+            <h3 class="text-xl font-bold">Edge and Checkout: the payment moments</h3>
+            <p class="mt-2 text-ink/80">Wallet, credit, checkout billing and post-purchase support unified into one journey at Walmart Connect, with explainable decisions and guided recovery.</p>
+          </div>
+          <div class="bg-white p-6">
+            <span class="icon-chip mb-4"><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" /> <path d="M20 2v4" /> <path d="M22 4h-4" /> <circle cx="4" cy="20" r="2" /></svg></span>
+            <h3 class="text-xl font-bold">Special projects: where Commerce goes next</h3>
+            <p class="mt-2 text-ink/80">Incubated the Symphony generative AI creative suite at TikTok and industry-first multimodal AI concepts in Microsoft Teams, from pitch to shipped product.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Contact -->
+  <footer id="contact" class="border-t border-line bg-stone/60 py-16">
+    <div class="wrap flex flex-col justify-between gap-8 md:flex-row md:items-end">
+      <div>
+        <h2 class="display text-4xl">Let's talk about agentic commerce</h2>
+        <p class="mt-3 text-ink/80">Seattle area. Open to conversations about design leadership in commerce and AI.</p>
+      </div>
+      <ul class="flex flex-wrap gap-3">
+        <li><a class="btn-primary" href="mailto:mcaggs@gmail.com">mcaggs@gmail.com</a></li>
+        <li><a class="btn-quiet" href="https://www.linkedin.com/in/productmanagermaheshagarwal" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a class="btn-quiet" href="Mahesh_Agarwal_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></li>
+      </ul>
+    </div>
+    <p class="wrap mt-12 text-sm text-muted">© 2026 Mahesh Agarwal. Company names describe my roles; pattern sketches and storyboards are illustrative. Photos from Pexels under the Pexels license; icons from Lucide.</p>
+  </footer>
+
+  <!-- ===================== CASE STUDY: TAGOR AI ===================== -->
+  <dialog id="case-tagor" class="case" aria-labelledby="tagor-title">
+    <div class="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-line bg-white/95 px-5 py-3 backdrop-blur sm:px-8">
+      <p class="text-sm font-semibold text-muted">Case study 1 of 3, Tagor AI</p>
+      <button type="button" class="rounded-full border border-line px-3.5 py-1.5 text-sm font-semibold hover:border-ink" data-close>Close</button>
+    </div>
+    <article class="px-5 pb-10 pt-6 sm:px-8">
+      <img src="img/cover-tagor.jpg" alt="A woman at her kitchen table weighing a decision on her phone" class="photo mb-7 h-48 sm:h-64" style="object-position: center 35%" loading="lazy" width="1600" height="1067" />
+      <h2 id="tagor-title" class="display text-[2.1rem] sm:text-5xl">An AI co-pilot people can trust with their money</h2>
+      <p class="mt-3 text-muted">Investor Co-Pilot and Advisor Co-Pilot. My role: Founder &amp; Chief Product &amp; Technology Officer, 2025 to present. I set the experience vision, built the design system, and hire and mentor the founding team across product design, content design, UX research and AI engineering.</p>
+
+      <p class="mt-6 rounded-2xl border border-line bg-stone px-5 py-4 text-[1.05rem] leading-relaxed">Investors and advisors won't act on AI financial advice they can't inspect, and regulators won't allow advice that can't be explained. As founder and CPTO, I set the experience vision and built the design system and human-in-the-loop patterns for delegation, approval, and recovery across Investor and Advisor Co-Pilot, cutting concept-to-shipped lead time by 40%.</p>
+
+      <dl class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div class="flex flex-col rounded-xl border border-line p-4"><dt class="text-sm text-muted">Concept-to-shipped lead time</dt><dd class="order-first text-3xl font-bold">−40%</dd></div>
+        <div class="flex flex-col rounded-xl border border-line p-4"><dt class="text-sm text-muted">Reusable human-in-the-loop patterns</dt><dd class="order-first text-3xl font-bold">6</dd></div>
+        <div class="flex flex-col rounded-xl border border-line p-4"><dt class="text-sm text-muted">Products on one design system</dt><dd class="order-first text-3xl font-bold">2</dd></div>
+      </dl>
+
+      <nav class="mt-6 flex flex-wrap gap-2" aria-label="Jump to section">
+        <button type="button" class="chip" data-jump="tagor-problem">Problem</button>
+        <button type="button" class="chip" data-jump="tagor-research">Research &amp; constraints</button>
+        <button type="button" class="chip" data-jump="tagor-tradeoffs">Trade-offs</button>
+        <button type="button" class="chip" data-jump="tagor-solution">Solution</button>
+        <button type="button" class="chip" data-jump="tagor-storyboard">Storyboard</button>
+        <button type="button" class="chip" data-jump="tagor-results">Results</button>
+      </nav>
+
+      <section id="tagor-problem" class="case-section">
+        <h3><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <line x1="12" x2="12" y1="8" y2="12" /> <line x1="12" x2="12.01" y1="16" y2="16" /></svg>Problem</h3>
+        <ul class="case-list">
+          <li><strong>The highest-stakes version of agentic commerce:</strong> a person acts on a recommendation they didn't search for, with their own money.</li>
+          <li><strong>Two users, one system:</strong> investors need plain-language confidence; advisors need to supervise what the AI does for their clients.</li>
+          <li><strong>No precedent:</strong> no settled conventions for how an AI proposes, explains, gets approval for, and undoes a financial action.</li>
+        </ul>
+        <p class="takeaway"><svg aria-hidden="true" class="mt-0.5 h-5 w-5 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>If people can't inspect a recommendation, they won't act on it. In a regulated domain, they're not allowed to.</span></p>
+      </section>
+
+      <section id="tagor-research" class="case-section">
+        <h3><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1" /> <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /> <path d="M12 11h4" /> <path d="M12 16h4" /> <path d="M8 11h.01" /> <path d="M8 16h.01" /></svg>Research &amp; constraints</h3>
+        <ul class="case-list">
+          <li><strong>Rapid formative research</strong> with investors and advisors in early-adopter pilots defined what "trustworthy" had to look like on screen.</li>
+          <li><strong>Every claim cites a source:</strong> answers are grounded in retrieved documents, with no unsupported advice.</li>
+          <li><strong>Disclosures must be readable:</strong> content design wrote suitability language in plain words instead of pasted legal text.</li>
+          <li><strong>Consequence varies:</strong> a summary and a trade carry very different risk, so they can't carry the same friction.</li>
+          <li><strong>Founding-team scale:</strong> a small team needed one reusable system, not bespoke screens per product.</li>
+        </ul>
+        <p class="takeaway"><svg aria-hidden="true" class="mt-0.5 h-5 w-5 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Trust had to be specified, componentized and tested like any other design material.</span></p>
+      </section>
+
+      <section id="tagor-tradeoffs" class="case-section">
+        <h3><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6a9 9 0 0 0-9 9V3" /> <circle cx="18" cy="6" r="3" /> <circle cx="6" cy="18" r="3" /></svg>Key trade-offs</h3>
+        <dl class="divide-y divide-line rounded-xl border border-line">
+          <div class="grid gap-1 p-4 sm:grid-cols-12 sm:gap-4"><dt class="font-semibold text-muted sm:col-span-4">Speed vs. control</dt><dd class="sm:col-span-8"><strong>Step-up approvals.</strong> Low-risk actions flow; consequential ones need an explicit yes.</dd></div>
+          <div class="grid gap-1 p-4 sm:grid-cols-12 sm:gap-4"><dt class="font-semibold text-muted sm:col-span-4">Transparency vs. cognitive load</dt><dd class="sm:col-span-8"><strong>Progressive disclosure of evidence.</strong> The answer comes first; citations are one tap away.</dd></div>
+          <div class="grid gap-1 p-4 sm:grid-cols-12 sm:gap-4"><dt class="font-semibold text-muted sm:col-span-4">Sounding confident vs. being honest</dt><dd class="sm:col-span-8"><strong>Confidence framing in the copy.</strong> The co-pilot says what it knows, what it doesn't, and why.</dd></div>
+          <div class="grid gap-1 p-4 sm:grid-cols-12 sm:gap-4"><dt class="font-semibold text-muted sm:col-span-4">Bespoke screens vs. a shared system</dt><dd class="sm:col-span-8"><strong>System first.</strong> Shared tokens and conversational cards before scaling screens, an up-front cost that paid back in velocity.</dd></div>
+        </dl>
+        <p class="takeaway"><svg aria-hidden="true" class="mt-0.5 h-5 w-5 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Friction is a design material. Spend it where the consequence is.</span></p>
+      </section>
+
+      <section id="tagor-solution" class="case-section">
+        <h3><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" /> <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" /> <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" /></svg>Final solution</h3>
+        <ul class="case-list">
+          <li><strong>Progressive goal expression:</strong> people state intent in their own words; the co-pilot clarifies before it recommends.</li>
+          <li><strong>Side-by-side trade-off comparison,</strong> so options are weighed, not just ranked.</li>
+          <li><strong>Cited transparency:</strong> each recommendation links to the sources behind it.</li>
+          <li><strong>Real-time supervision</strong> so advisors can see what the AI is doing for a client and step in.</li>
+          <li><strong>Step-up approvals</strong> before any consequential action, and <strong>one-click reversal</strong> when something goes wrong.</li>
+          <li><strong>A modular Figma design system:</strong> shared tokens, conversational cards and interactive prototypes, one library for both co-pilots.</li>
+        </ul>
+        <figure class="mt-6 rounded-2xl border border-line bg-stone p-4 sm:p-5">
+          <figcaption class="mb-3 text-sm font-semibold">Friction scales with consequence <span class="font-normal text-muted">(illustrative pattern diagram)</span></figcaption>
+          <ol class="grid gap-2 sm:grid-cols-4">
+            <li class="flow-node sm:mt-12">Inform<span class="block text-xs font-normal text-muted">Summary, no approval</span></li>
+            <li class="flow-node sm:mt-8">Recommend<span class="block text-xs font-normal text-muted">Cited, side by side</span></li>
+            <li class="flow-node sm:mt-4">Act with approval<span class="block text-xs font-normal text-muted">Explicit yes</span></li>
+            <li class="flow-node border-review/50 bg-review-tint">Act with step-up<span class="block text-xs font-normal text-review">Re-confirm plus disclosure</span></li>
+          </ol>
+          <p class="mt-2 rounded-lg bg-approve-tint px-3 py-1.5 text-center text-sm font-medium text-approve">One-click reversal available at every step</p>
+        </figure>
+        <p class="takeaway"><svg aria-hidden="true" class="mt-0.5 h-5 w-5 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>One trust grammar, two products.</span></p>
+      </section>
+
+      <section id="tagor-storyboard" class="case-section">
+        <h3><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m12.296 3.464 3.02 3.956" /> <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3z" /> <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /> <path d="m6.18 5.276 3.1 3.899" /></svg>UX storyboard</h3>
+        <p class="max-w-[46rem] text-ink/85">Maya, a first-time investor, wants to put a bonus toward a house. Her advisor, Raj, supervises through Advisor Co-Pilot. Six moments take her from a goal to an action she can undo.</p>
+        <p class="mt-2 text-sm text-muted">Illustrative storyboard of the shipped patterns, with fictional people and data. Scenes are representational stock photos; screens are not production UI.</p>
+        <div class="sb-cols" aria-hidden="true"><span>Scene</span><span>Screen</span><span>What happens</span></div>
+        <ol class="sb-grid">
+          <li class="sb-row">
+            <div class="sb-head"><h4 class="sb-title"><span class="sb-num">1</span>Say the goal in her own words</h4><span class="annot">Progressive goal expression</span></div>
+            <figure class="sb-scene"><img src="img/sb-tagor-1.jpg" alt="A woman in her kitchen typing on her phone" loading="lazy" width="900" height="600" /></figure>
+            <div class="sb-wire-wrap"><div class="sb-wire" data-export="tagor-1">
+              <div class="wb-bar"><span>Investor Co-Pilot</span><span>New goal</span></div>
+              <div class="wb-body">
+                <p class="wb-user">I got a $20k bonus. I want it for a house down payment in 3 years, without much risk.</p>
+                <div class="wb-bot">
+                  <p>Two quick questions before I suggest anything:</p>
+                  <p class="mt-1 flex flex-wrap items-center gap-1"><span class="text-[10.5px] text-muted">Is 3 years firm?</span><span class="wb-chip-on">Firm</span><span class="wb-chip">Could stretch</span></p>
+                  <p class="mt-1 flex flex-wrap items-center gap-1"><span class="text-[10.5px] text-muted">OK if it dips along the way?</span><span class="wb-chip">A little</span><span class="wb-chip-on">Not really</span></p>
+                </div>
+              </div>
+            </div></div>
+            <div class="sb-text"><p class="sb-desc">Maya states a goal, not a product. The co-pilot asks two clarifying questions before it recommends anything.</p>
+            <p class="sb-trust mt-2.5"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Trust moment: it listens before it advises.</span></p></div>
+          </li>
+
+          <li class="sb-row">
+            <div class="sb-head"><h4 class="sb-title"><span class="sb-num">2</span>Weigh options side by side</h4><span class="annot">Trade-off comparison</span></div>
+            <figure class="sb-scene"><img src="img/sb-tagor-2.jpg" alt="A woman thinking while working at her laptop" loading="lazy" width="900" height="600" /></figure>
+            <div class="sb-wire-wrap"><div class="sb-wire" data-export="tagor-2">
+              <div class="wb-bar"><span>Investor Co-Pilot</span><span>House fund, 3 years</span></div>
+              <div class="wb-body">
+                <p>Three ways to get there. Each gives something up:</p>
+                <div class="grid grid-cols-3 gap-1.5">
+                  <div class="wb-card"><p class="font-semibold">Savings</p><p class="text-[10.5px] text-muted">Risk: lowest<br>Cash: anytime<br>Growth: low</p></div>
+                  <div class="wb-card border-approve bg-approve-tint/60"><p class="font-semibold">Treasury ladder</p><p class="text-[10.5px] text-muted">Risk: low<br>Cash: at maturity<br>Growth: steady</p><p class="mt-0.5 text-[10px] font-semibold text-approve">Fits your answers</p></div>
+                  <div class="wb-card"><p class="font-semibold">Fund mix</p><p class="text-[10.5px] text-muted">Risk: moderate<br>Cash: anytime<br>Growth: higher, can dip</p></div>
+                </div>
+              </div>
+            </div></div>
+            <div class="sb-text"><p class="sb-desc">The co-pilot lays out three options with what each trades away, risk, access to cash and growth, instead of one "best" answer.</p>
+            <p class="sb-trust mt-2.5"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Trust moment: she sees what she gives up, not just what she gets.</span></p></div>
+          </li>
+
+          <li class="sb-row">
+            <div class="sb-head"><h4 class="sb-title"><span class="sb-num">3</span>Check the evidence and the limits</h4><span class="annot">Cited transparency, confidence framing</span></div>
+            <figure class="sb-scene"><img src="img/sb-tagor-3.jpg" alt="A woman by a window reading on her phone" loading="lazy" width="900" height="600" /></figure>
+            <div class="sb-wire-wrap"><div class="sb-wire" data-export="tagor-3">
+              <div class="wb-bar"><span>Investor Co-Pilot</span><span>Why the ladder?</span></div>
+              <div class="wb-body">
+                <div class="wb-bot">
+                  <p>The ladder suits a firm date: money matures when you need it <span class="wb-cite">1</span> <span class="wb-cite">2</span></p>
+                  <p class="mt-0.5 text-muted">Less sure: whether you'll need cash early.</p>
+                </div>
+                <p class="wb-note">In plain words: this is a suggestion, not a guarantee. Selling before maturity could return less than you put in.</p>
+                <p class="flex flex-wrap gap-1 text-[10px] text-muted"><span class="wb-cite">1</span>Your goal and risk answers <span class="wb-cite">2</span>Product terms, page 4</p>
+              </div>
+            </div></div>
+            <div class="sb-text"><p class="sb-desc">Every claim links to its source. The co-pilot says what it isn't sure about, and content design puts the suitability disclosure in plain words.</p>
+            <p class="sb-trust mt-2.5"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Trust moment: she can inspect the reasoning and where it stops.</span></p></div>
+          </li>
+
+          <li class="sb-row">
+            <div class="sb-head"><h4 class="sb-title"><span class="sb-num">4</span>Her advisor reviews in real time</h4><span class="annot">Real-time supervision</span></div>
+            <figure class="sb-scene"><img src="img/sb-tagor-4.jpg" alt="A financial advisor at his desk across from a client" loading="lazy" width="900" height="600" /></figure>
+            <div class="sb-wire-wrap"><div class="sb-wire" data-export="tagor-4">
+              <div class="wb-bar"><span>Advisor Co-Pilot</span><span>Review queue (3)</span></div>
+              <div class="wb-body">
+                <div class="flex items-center justify-between gap-2"><p><span class="font-semibold">Maya L.</span> Treasury ladder, $20,000</p><span class="wb-flag">Needs review</span></div>
+                <ul class="space-y-0.5 text-[11px]">
+                  <li><span class="wb-ok">✓</span> Matches her risk answers</li>
+                  <li><span class="wb-ok">✓</span> Within concentration limits</li>
+                  <li><span class="font-semibold text-review">!</span> Firm goal date: confirm she won't need cash early</li>
+                </ul>
+                <p class="flex flex-wrap gap-1 pt-0.5"><span class="wb-btn">Approve</span><span class="wb-btn-q">Adjust</span><span class="wb-btn-q">Message Maya</span></p>
+              </div>
+            </div></div>
+            <div class="sb-text"><p class="sb-desc">Raj sees the AI's proposal with suitability checks already run, and can approve, adjust, or step in before anything executes.</p>
+            <p class="sb-trust mt-2.5"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Trust moment: a professional supervises the consequential step.</span></p></div>
+          </li>
+
+          <li class="sb-row">
+            <div class="sb-head"><h4 class="sb-title"><span class="sb-num">5</span>Approve with a step-up</h4><span class="annot">Step-up approval</span></div>
+            <figure class="sb-scene"><img src="img/sb-tagor-5.jpg" alt="A hand holding a phone with a payment app open" loading="lazy" width="900" height="600" /></figure>
+            <div class="sb-wire-wrap"><div class="sb-wire" data-export="tagor-5">
+              <div class="wb-bar"><span>Investor Co-Pilot</span><span>Confirm investment</span></div>
+              <div class="wb-body">
+                <dl class="grid grid-cols-[auto_1fr] gap-x-3 text-[11px]">
+                  <dt class="text-muted">Buy</dt><dd>3-year Treasury ladder</dd>
+                  <dt class="text-muted">From</dt><dd>Savings account, $20,000</dd>
+                  <dt class="text-muted">Reviewed</dt><dd><span class="wb-ok">✓</span> Raj, your advisor</dd>
+                </dl>
+                <p class="wb-note">Bigger moves ask for more. Type the amount to confirm.</p>
+                <p class="flex items-center gap-1.5"><span class="rounded border border-ink px-2 py-[1px] text-[11px] font-semibold">$ 20,000</span><span class="wb-btn">Confirm and invest</span></p>
+              </div>
+            </div></div>
+            <div class="sb-text"><p class="sb-desc">Because this moves real money, the co-pilot steps up: a full summary, the advisor's sign-off and a re-typed amount. Saving a plan never asks this much.</p>
+            <p class="sb-trust mt-2.5"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Trust moment: friction matches the consequence.</span></p></div>
+          </li>
+
+          <li class="sb-row">
+            <div class="sb-head"><h4 class="sb-title"><span class="sb-num">6</span>Undo without a phone call</h4><span class="annot">One-click reversal</span></div>
+            <figure class="sb-scene"><img src="img/sb-tagor-6.jpg" alt="A woman smiling at her phone in a café" loading="lazy" width="900" height="600" /></figure>
+            <div class="sb-wire-wrap"><div class="sb-wire" data-export="tagor-6">
+              <div class="wb-bar"><span>Investor Co-Pilot</span><span>Order placed</span></div>
+              <div class="wb-body">
+                <p class="wb-bot">Done. Your order is queued for today's settlement.</p>
+                <div class="rounded-md bg-approve-tint px-2 py-1.5">
+                  <p class="font-semibold">You can cancel until 4:00 pm ET today.</p>
+                  <p class="mt-1 flex gap-1"><span class="wb-btn-q">Cancel order</span><span class="wb-btn-q">View plan</span></p>
+                </div>
+                <p class="text-[10.5px] text-muted">Activity: plan proposed, reviewed by Raj, approved by you at 10:42 am</p>
+              </div>
+            </div></div>
+            <div class="sb-text"><p class="sb-desc">The confirmation shows a clear cancel window and a one-click cancel. An activity log records who did what, and when.</p>
+            <p class="sb-trust mt-2.5"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Trust moment: acting feels safe because undoing is easy.</span></p></div>
+          </li>
+        </ol>
+      </section>
+
+      <section id="tagor-results" class="case-section">
+        <h3><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6" /> <path d="m22 7-8.5 8.5-5-5L2 17" /></svg>Results</h3>
+        <ul class="case-list">
+          <li><strong>40% shorter concept-to-shipped-feature lead time,</strong> from a shared system and a tight research loop.</li>
+          <li><strong>A reusable human-in-the-loop pattern library:</strong> goal expression, comparison, cited transparency, supervision, step-up approval and recovery.</li>
+          <li><strong>A founding multidisciplinary team</strong> hired and mentored across product design, content design, UX research and AI engineering.</li>
+        </ul>
+        <p class="takeaway"><svg aria-hidden="true" class="mt-0.5 h-5 w-5 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>For Microsoft Commerce: a Copilot shopper faces the same moment, acting on a recommendation they didn't search for. These patterns are a working grammar for it.</span></p>
+      </section>
+
+      <div class="mt-10 flex flex-wrap justify-between gap-3 border-t border-line pt-6">
+        <span></span>
+        <button type="button" class="btn-quiet" data-goto="walmart">Next: Walmart Connect</button>
+      </div>
+    </article>
+  </dialog>
+
+  <!-- ===================== CASE STUDY: WALMART CONNECT ===================== -->
+  <dialog id="case-walmart" class="case" aria-labelledby="walmart-title">
+    <div class="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-line bg-white/95 px-5 py-3 backdrop-blur sm:px-8">
+      <p class="text-sm font-semibold text-muted">Case study 2 of 3, Walmart Connect</p>
+      <button type="button" class="rounded-full border border-line px-3.5 py-1.5 text-sm font-semibold hover:border-ink" data-close>Close</button>
+    </div>
+    <article class="px-5 pb-10 pt-6 sm:px-8">
+      <img src="img/cover-walmart.jpg" alt="A smiling businesswoman working on her laptop in a bright office" class="photo mb-7 h-48 sm:h-64" style="object-position: center 30%" loading="lazy" width="1600" height="1067" />
+      <h2 id="walmart-title" class="display text-[2.1rem] sm:text-5xl">One journey from sign-up to payment, across six surfaces</h2>
+      <p class="mt-3 text-muted">Commerce onboarding, wallet, credit and payment experiences in a $6B+ omnichannel retail ecosystem. My role: Head of Product, 2025 to present, leading 6 PMs, 2 designers and 2 TPMs plus embedded content design and UX research pods.</p>
+
+      <p class="mt-6 rounded-2xl border border-line bg-stone px-5 py-4 text-[1.05rem] leading-relaxed">Advertisers joining Walmart Connect crossed six fragmented surfaces, from self-serve sign-up through credit, wallet, billing, and support, and activation took days. As Head of Product, I set one cross-surface experience strategy and shipped conversational onboarding and an agentic billing assistant with explainable credit decisions and approval gates, lifting self-serve activation 45% (days to hours) and cutting billing-friction tickets by about 20%.</p>
+
+      <dl class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div class="flex flex-col rounded-xl border border-line p-4"><dt class="text-sm text-muted">Self-serve activation, days to hours</dt><dd class="order-first text-3xl font-bold">+45%</dd></div>
+        <div class="flex flex-col rounded-xl border border-line p-4"><dt class="text-sm text-muted">Billing-friction tickets</dt><dd class="order-first text-3xl font-bold">~20% fewer</dd></div>
+        <div class="flex flex-col rounded-xl border border-line p-4"><dt class="text-sm text-muted">Surfaces unified into one journey</dt><dd class="order-first text-3xl font-bold">6 → 1</dd></div>
+      </dl>
+
+      <nav class="mt-6 flex flex-wrap gap-2" aria-label="Jump to section">
+        <button type="button" class="chip" data-jump="walmart-problem">Problem</button>
+        <button type="button" class="chip" data-jump="walmart-research">Research &amp; constraints</button>
+        <button type="button" class="chip" data-jump="walmart-tradeoffs">Trade-offs</button>
+        <button type="button" class="chip" data-jump="walmart-solution">Solution</button>
+        <button type="button" class="chip" data-jump="walmart-storyboard">Storyboard</button>
+        <button type="button" class="chip" data-jump="walmart-results">Results</button>
+      </nav>
+
+      <section id="walmart-problem" class="case-section">
+        <h3><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <line x1="12" x2="12" y1="8" y2="12" /> <line x1="12" x2="12.01" y1="16" y2="16" /></svg>Problem</h3>
+        <ul class="case-list">
+          <li><strong>Six fragmented surfaces:</strong> self-serve web, managed portals, identity and permissions, credit and wallet provisioning, checkout billing, and post-purchase support.</li>
+          <li><strong>Activation took days,</strong> and billing confusion turned into support tickets.</li>
+          <li><strong>Payment moments decide everything:</strong> credit decisions and billing are where customers abandon, and where an opaque system loses trust.</li>
+        </ul>
+        <p class="takeaway"><svg aria-hidden="true" class="mt-0.5 h-5 w-5 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Customers experienced one journey. The organization was shipping six products.</span></p>
+      </section>
+
+      <section id="walmart-research" class="case-section">
+        <h3><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1" /> <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /> <path d="M12 11h4" /> <path d="M12 16h4" /> <path d="M8 11h.01" /> <path d="M8 16h.01" /></svg>Research &amp; constraints</h3>
+        <ul class="case-list">
+          <li><strong>Embedded UX research and funnel analytics</strong> traced where activation stalled and what was driving billing tickets.</li>
+          <li><strong>Credit and risk are governed decisions:</strong> explanations had to be accurate enough for Finance and Legal, not just friendly.</li>
+          <li><strong>Matrixed ownership:</strong> no single team could mandate coherence; it had to be earned through shared systems and review.</li>
+          <li><strong>Real money at scale:</strong> billing and payment changes in a $6B+ ecosystem needed guarded, measured rollouts.</li>
+        </ul>
+        <p class="takeaway"><svg aria-hidden="true" class="mt-0.5 h-5 w-5 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>In a matrix, coherence comes from shared standards and cadence, not the org chart.</span></p>
+      </section>
+
+      <section id="walmart-tradeoffs" class="case-section">
+        <h3><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6a9 9 0 0 0-9 9V3" /> <circle cx="18" cy="6" r="3" /> <circle cx="6" cy="18" r="3" /></svg>Key trade-offs</h3>
+        <dl class="divide-y divide-line rounded-xl border border-line">
+          <div class="grid gap-1 p-4 sm:grid-cols-12 sm:gap-4"><dt class="font-semibold text-muted sm:col-span-4">Full automation vs. supervision</dt><dd class="sm:col-span-8"><strong>Automate the routine, gate the consequential.</strong> The assistant handles setup; people approve credit and billing changes at defined checkpoints.</dd></div>
+          <div class="grid gap-1 p-4 sm:grid-cols-12 sm:gap-4"><dt class="font-semibold text-muted sm:col-span-4">Explain everything vs. explain what matters</dt><dd class="sm:col-span-8"><strong>Explain at the moment of decision,</strong> in plain language, instead of linking to a policy page.</dd></div>
+          <div class="grid gap-1 p-4 sm:grid-cols-12 sm:gap-4"><dt class="font-semibold text-muted sm:col-span-4">Team autonomy vs. one journey</dt><dd class="sm:col-span-8"><strong>Shared Figma libraries and a weekly cross-discipline critique,</strong> trading some local freedom for coherence.</dd></div>
+          <div class="grid gap-1 p-4 sm:grid-cols-12 sm:gap-4"><dt class="font-semibold text-muted sm:col-span-4">Ship fast vs. prove it</dt><dd class="sm:col-span-8"><strong>Experiment before scaling,</strong> with analytics tied to activation and ticket volume.</dd></div>
+        </dl>
+        <p class="takeaway"><svg aria-hidden="true" class="mt-0.5 h-5 w-5 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Coherence is a decision you make again in every review.</span></p>
+      </section>
+
+      <section id="walmart-solution" class="case-section">
+        <h3><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" /> <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" /> <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" /></svg>Final solution</h3>
+        <ul class="case-list">
+          <li><strong>One experience strategy</strong> across onboarding, identity, credit and wallet, checkout billing and post-purchase support.</li>
+          <li><strong>Conversational AI onboarding</strong> that guides setup in hours instead of days.</li>
+          <li><strong>An Agentic Revenue &amp; Billing Assistant</strong> with transparent credit and risk explanations, supervision checkpoints, approval gates and guided error recovery.</li>
+          <li><strong>A quality operating system:</strong> Figma design-system libraries and a weekly critique across product design, content design and UX research.</li>
+          <li><strong>Peer partnership</strong> with Engineering, Finance and Legal VPs to steer the multi-quarter platform roadmap.</li>
+        </ul>
+        <figure class="mt-6 rounded-2xl border border-line bg-stone p-4 sm:p-5">
+          <figcaption class="mb-3 text-sm font-semibold">From six surfaces to one journey <span class="font-normal text-muted">(illustrative pattern diagram)</span></figcaption>
+          <ol class="grid grid-cols-2 gap-2 sm:grid-cols-5">
+            <li class="flow-node">Sign up<span class="block text-xs font-normal text-muted">Conversational onboarding</span></li>
+            <li class="flow-node">Verify<span class="block text-xs font-normal text-muted">Identity and permissions</span></li>
+            <li class="flow-node border-review/50 bg-review-tint">Credit &amp; wallet<span class="block text-xs font-normal text-review">Explained, approved</span></li>
+            <li class="flow-node border-review/50 bg-review-tint">Billing<span class="block text-xs font-normal text-review">Approval gates</span></li>
+            <li class="flow-node">Support<span class="block text-xs font-normal text-muted">Guided recovery</span></li>
+          </ol>
+          <p class="mt-2 rounded-lg bg-ink px-3 py-1.5 text-center text-sm font-medium text-white">One assistant across the journey: explains, asks for approval, recovers</p>
+        </figure>
+        <p class="takeaway"><svg aria-hidden="true" class="mt-0.5 h-5 w-5 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>The journey became the unit of design, not the surface.</span></p>
+      </section>
+
+      <section id="walmart-storyboard" class="case-section">
+        <h3><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m12.296 3.464 3.02 3.956" /> <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3z" /> <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /> <path d="m6.18 5.276 3.1 3.899" /></svg>UX storyboard</h3>
+        <p class="max-w-[46rem] text-ink/85">Dana runs marketing for a mid-size snack brand and is setting up advertising for the first time. Six moments take her from sign-up to a paid, running account without a support ticket.</p>
+        <p class="mt-2 text-sm text-muted">Illustrative storyboard of the shipped patterns, with fictional people and data. Scenes are representational stock photos; screens are not production UI.</p>
+        <div class="sb-cols" aria-hidden="true"><span>Scene</span><span>Screen</span><span>What happens</span></div>
+        <ol class="sb-grid">
+          <li class="sb-row">
+            <div class="sb-head"><h4 class="sb-title"><span class="sb-num">1</span>Sign up in a conversation</h4><span class="annot">Conversational onboarding</span></div>
+            <figure class="sb-scene"><img src="img/sb-walmart-1.jpg" alt="A small business owner at her laptop among shipping boxes" loading="lazy" width="900" height="600" /></figure>
+            <div class="sb-wire-wrap"><div class="sb-wire" data-export="walmart-1">
+              <div class="wb-bar"><span>Ads account setup</span><span>Step 1 of 4</span></div>
+              <div class="wb-body">
+                <p class="wb-bot">What would you like to advertise?</p>
+                <p class="wb-user">Crunchwell snacks, sold in stores and online.</p>
+                <div class="wb-bot">
+                  <p>I found your catalog: <span class="font-semibold">Crunchwell Snacks, 40 items.</span> Is this you?</p>
+                  <p class="mt-1 flex gap-1"><span class="wb-btn">Yes, that's us</span><span class="wb-btn-q">Not us</span></p>
+                </div>
+              </div>
+            </div></div>
+            <div class="sb-text"><p class="sb-desc">Instead of a long form, Dana describes her business. The assistant finds her catalog and pre-fills the details.</p>
+            <p class="sb-trust mt-2.5"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Trust moment: setup starts from what she already knows.</span></p></div>
+          </li>
+
+          <li class="sb-row">
+            <div class="sb-head"><h4 class="sb-title"><span class="sb-num">2</span>Bring the team, with clear roles</h4><span class="annot">Identity and permissions, in the flow</span></div>
+            <figure class="sb-scene"><img src="img/sb-walmart-2.jpg" alt="Three colleagues reviewing a laptop together" loading="lazy" width="900" height="600" /></figure>
+            <div class="sb-wire-wrap"><div class="sb-wire" data-export="walmart-2">
+              <div class="wb-bar"><span>Ads account setup</span><span>Verification: in progress</span></div>
+              <div class="wb-body">
+                <p class="font-semibold">Who else needs access?</p>
+                <div class="wb-card flex items-start justify-between gap-2"><p>jordan@crunchwell.com<br><span class="text-[10.5px] text-muted">Can pay invoices. Can't launch campaigns.</span></p><span class="wb-chip-on">Billing admin</span></div>
+                <div class="wb-card flex items-start justify-between gap-2"><p>sam@crunchwell.com<br><span class="text-[10.5px] text-muted">Can see reports only.</span></p><span class="wb-chip">Viewer</span></div>
+              </div>
+            </div></div>
+            <div class="sb-text"><p class="sb-desc">Identity and permissions, once a separate portal, happen in the same flow. Each role is explained in one line.</p>
+            <p class="sb-trust mt-2.5"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Trust moment: she knows exactly who can spend money.</span></p></div>
+          </li>
+
+          <li class="sb-row">
+            <div class="sb-head"><h4 class="sb-title"><span class="sb-num">3</span>A credit decision, explained</h4><span class="annot">Credit and risk explainability</span></div>
+            <figure class="sb-scene"><img src="img/sb-walmart-3.jpg" alt="A woman reviewing finances at her desk" loading="lazy" width="900" height="600" /></figure>
+            <div class="sb-wire-wrap"><div class="sb-wire" data-export="walmart-3">
+              <div class="wb-bar"><span>Ads account setup</span><span>Step 3 of 4</span></div>
+              <div class="wb-body">
+                <p class="font-semibold">Your credit line is ready: $20,000</p>
+                <p class="text-[11px] text-muted">You asked for $50,000.</p>
+                <p class="wb-note"><span class="font-semibold">Why this amount?</span> New accounts start lower until there's billing history. Your limit is reviewed as you're billed.</p>
+                <p class="flex flex-wrap gap-1"><span class="wb-btn">Start with $20,000</span><span class="wb-btn-q">Prepay to go higher</span><span class="wb-btn-q">Talk to us</span></p>
+              </div>
+            </div></div>
+            <div class="sb-text"><p class="sb-desc">The decision arrives with its reason and three ways forward, at the moment it matters instead of in a policy page.</p>
+            <p class="sb-trust mt-2.5"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Trust moment: a "not yet" comes with a why and a path.</span></p></div>
+          </li>
+
+          <li class="sb-row">
+            <div class="sb-head"><h4 class="sb-title"><span class="sb-num">4</span>Money moves with the right yes</h4><span class="annot">Approval gate</span></div>
+            <figure class="sb-scene"><img src="img/sb-walmart-4.jpg" alt="A man checking his phone at his desk" loading="lazy" width="900" height="600" /></figure>
+            <div class="sb-wire-wrap"><div class="sb-wire" data-export="walmart-4">
+              <div class="wb-bar"><span>Wallet</span><span>Step 4 of 4</span></div>
+              <div class="wb-body">
+                <p class="text-[11px] text-muted">Pay campaigns from</p>
+                <p class="flex items-center gap-1.5"><span class="inline-block h-2.5 w-2.5 rounded-full border-[3px] border-ink"></span>Credit line, $20,000 available</p>
+                <p class="flex items-center gap-1.5"><span class="inline-block h-2.5 w-2.5 rounded-full border border-muted"></span>Company card</p>
+                <div class="rounded-md border border-dashed border-review/50 bg-review-tint px-2 py-1 text-[11px]">
+                  <p>Billing changes need a billing admin's approval. Sent to Jordan.</p>
+                  <p class="mt-0.5 font-semibold text-approve">✓ Jordan approved, 2 min ago</p>
+                </div>
+              </div>
+            </div></div>
+            <div class="sb-text"><p class="sb-desc">Dana chooses how campaigns are paid. Because it's a billing change, it routes to Jordan, the billing admin, for approval.</p>
+            <p class="sb-trust mt-2.5"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Trust moment: no one spends company money alone.</span></p></div>
+          </li>
+
+          <li class="sb-row">
+            <div class="sb-head"><h4 class="sb-title"><span class="sb-num">5</span>Ask the billing assistant</h4><span class="annot">Agentic billing assistant</span></div>
+            <figure class="sb-scene"><img src="img/sb-walmart-5.jpg" alt="A person checking invoices with a calculator" loading="lazy" width="900" height="600" /></figure>
+            <div class="sb-wire-wrap"><div class="sb-wire" data-export="walmart-5">
+              <div class="wb-bar"><span>Billing assistant</span><span>October invoice</span></div>
+              <div class="wb-body">
+                <p class="wb-user">Why is October's invoice higher?</p>
+                <div class="wb-bot">
+                  <p>Three campaigns ran 6 days longer:</p>
+                  <ul class="text-[10.5px] text-muted"><li>Fall Snacks: +$2,140</li><li>Game Day: +$860</li><li>Other: +$120</li></ul>
+                  <p class="mt-1 flex flex-wrap items-center gap-1">Want a monthly cap? <span class="wb-btn">Set a $10k cap</span><span class="wb-btn-q">No thanks</span></p>
+                </div>
+              </div>
+            </div></div>
+            <div class="sb-text"><p class="sb-desc">The assistant answers with the line items behind the number, then proposes a fix rather than making it. A cap change still goes to Jordan.</p>
+            <p class="sb-trust mt-2.5"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Trust moment: answers come with evidence; changes still need a yes.</span></p></div>
+          </li>
+
+          <li class="sb-row">
+            <div class="sb-head"><h4 class="sb-title"><span class="sb-num">6</span>Fix a failed payment early</h4><span class="annot">Guided error recovery</span></div>
+            <figure class="sb-scene"><img src="img/sb-walmart-6.jpg" alt="A person paying with a card on a laptop" loading="lazy" width="900" height="600" /></figure>
+            <div class="sb-wire-wrap"><div class="sb-wire" data-export="walmart-6">
+              <div class="wb-bar"><span>Billing assistant</span><span>Action needed</span></div>
+              <div class="wb-body">
+                <div class="rounded-md border border-dashed border-review/50 bg-review-tint px-2 py-1">
+                  <p class="font-semibold text-review">Your card payment didn't go through.</p>
+                  <p class="text-[11px]">Campaigns keep running while you fix it.</p>
+                </div>
+                <p class="flex flex-wrap gap-1"><span class="wb-btn">Update card</span><span class="wb-btn-q">Switch to credit line</span><span class="wb-btn-q">Get help, details attached</span></p>
+                <p class="rounded-md bg-approve-tint px-2 py-1 font-semibold text-approve">✓ Resolved. No campaign paused.</p>
+              </div>
+            </div></div>
+            <div class="sb-text"><p class="sb-desc">A failed payment surfaces before it causes harm, with three fixes. If she needs support, the context travels with her.</p>
+            <p class="sb-trust mt-2.5"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Trust moment: a problem arrives with its fix, not as a ticket.</span></p></div>
+          </li>
+        </ol>
+      </section>
+
+      <section id="walmart-results" class="case-section">
+        <h3><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6" /> <path d="m22 7-8.5 8.5-5-5L2 17" /></svg>Results</h3>
+        <ul class="case-list">
+          <li><strong>+45% self-serve activation,</strong> with setup time cut from days to hours.</li>
+          <li><strong>About 20% fewer billing-friction tickets.</strong></li>
+          <li><strong>Shared design standards and a critique cadence</strong> across product design, content design and research.</li>
+          <li><strong>Design at the roadmap table</strong> with Engineering, Finance and Legal leadership.</li>
+        </ul>
+        <p class="takeaway"><svg aria-hidden="true" class="mt-0.5 h-5 w-5 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>For Microsoft Commerce: Edge and Checkout turn on the same payment moments, native checkout and wallet, that decide whether a shopper completes or abandons.</span></p>
+      </section>
+
+      <div class="mt-10 flex flex-wrap justify-between gap-3 border-t border-line pt-6">
+        <button type="button" class="btn-quiet" data-goto="tagor">Previous: Tagor AI</button>
+        <button type="button" class="btn-quiet" data-goto="tiktok">Next: TikTok</button>
+      </div>
+    </article>
+  </dialog>
+
+  <!-- ===================== CASE STUDY: TIKTOK ===================== -->
+  <dialog id="case-tiktok" class="case" aria-labelledby="tiktok-title">
+    <div class="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-line bg-white/95 px-5 py-3 backdrop-blur sm:px-8">
+      <p class="text-sm font-semibold text-muted">Case study 3 of 3, TikTok</p>
+      <button type="button" class="rounded-full border border-line px-3.5 py-1.5 text-sm font-semibold hover:border-ink" data-close>Close</button>
+    </div>
+    <article class="px-5 pb-10 pt-6 sm:px-8">
+      <img src="img/cover-tiktok.jpg" alt="A creator setting up her phone and ring light to film" class="photo mb-7 h-48 sm:h-64" style="object-position: center 30%" loading="lazy" width="1600" height="1067" />
+      <h2 id="tiktok-title" class="display text-[2.1rem] sm:text-5xl">Conversational discovery, from a stated goal to shoppable creative</h2>
+      <p class="mt-3 text-muted">TikTok Symphony Assistant and commerce discovery, on surfaces serving 1B+ users and $33.2B in TikTok Shop GMV. My role: Product Lead, Conversational AI, Commerce Discovery &amp; Creative Experience, 2024 to 2025, leading a global team of 8 PMs and 2 designers and co-leading product design, content design and user research.</p>
+
+      <p class="mt-6 rounded-2xl border border-line bg-stone px-5 py-4 text-[1.05rem] leading-relaxed">Brands and sellers had to work across four separate TikTok surfaces to turn a business goal into content that sells. As product lead, I directed the experience strategy for TikTok Symphony Assistant and co-led design, content, and research to ship natural-language goal setting, catalog-grounded recommendations, and generative merchandising, driving a 37% lift in purchase intent and 38% in brand favorability.</p>
+
+      <dl class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div class="flex flex-col rounded-xl border border-line p-4"><dt class="text-sm text-muted">Purchase intent</dt><dd class="order-first text-3xl font-bold">+37%</dd></div>
+        <div class="flex flex-col rounded-xl border border-line p-4"><dt class="text-sm text-muted">Brand favorability</dt><dd class="order-first text-3xl font-bold">+38%</dd></div>
+        <div class="flex flex-col rounded-xl border border-line p-4"><dt class="text-sm text-muted">Languages for AI avatars and dubbing</dt><dd class="order-first text-3xl font-bold">30+</dd></div>
+      </dl>
+
+      <nav class="mt-6 flex flex-wrap gap-2" aria-label="Jump to section">
+        <button type="button" class="chip" data-jump="tiktok-problem">Problem</button>
+        <button type="button" class="chip" data-jump="tiktok-research">Research &amp; constraints</button>
+        <button type="button" class="chip" data-jump="tiktok-tradeoffs">Trade-offs</button>
+        <button type="button" class="chip" data-jump="tiktok-solution">Solution</button>
+        <button type="button" class="chip" data-jump="tiktok-storyboard">Storyboard</button>
+        <button type="button" class="chip" data-jump="tiktok-results">Results</button>
+      </nav>
+
+      <section id="tiktok-problem" class="case-section">
+        <h3><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <line x1="12" x2="12" y1="8" y2="12" /> <line x1="12" x2="12.01" y1="16" y2="16" /></svg>Problem</h3>
+        <ul class="case-list">
+          <li><strong>Four surfaces, one intent:</strong> Symphony, Creative Center, TikTok One and TikTok Shop each held part of the path from a business goal to content that sells.</li>
+          <li><strong>Relevance at global scale:</strong> shoppable creative had to feel native and local across dozens of markets and languages.</li>
+          <li><strong>Agents that act fast:</strong> automated budget and bid pacing could compound a mistake at machine speed.</li>
+        </ul>
+        <p class="takeaway"><svg aria-hidden="true" class="mt-0.5 h-5 w-5 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>The assistant had to connect the four surfaces, not become a fifth.</span></p>
+      </section>
+
+      <section id="tiktok-research" class="case-section">
+        <h3><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1" /> <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /> <path d="M12 11h4" /> <path d="M12 16h4" /> <path d="M8 11h.01" /> <path d="M8 16h.01" /></svg>Research &amp; constraints</h3>
+        <ul class="case-list">
+          <li><strong>Customer signal, A/B tests and acceptance-rate analytics</strong> showed which AI suggestions people trusted enough to use.</li>
+          <li><strong>Catalog-grounded only:</strong> recommendations had to come from real products, never invented ones.</li>
+          <li><strong>Responsible AI guardrails</strong> for generative avatars, dubbing and creative.</li>
+          <li><strong>A global matrix:</strong> interdependent surfaces with separate owners across US and global teams.</li>
+        </ul>
+        <p class="takeaway"><svg aria-hidden="true" class="mt-0.5 h-5 w-5 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Acceptance rate is the honest trust metric. Every accept, edit or reject is a vote.</span></p>
+      </section>
+
+      <section id="tiktok-tradeoffs" class="case-section">
+        <h3><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6a9 9 0 0 0-9 9V3" /> <circle cx="18" cy="6" r="3" /> <circle cx="6" cy="18" r="3" /></svg>Key trade-offs</h3>
+        <dl class="divide-y divide-line rounded-xl border border-line">
+          <div class="grid gap-1 p-4 sm:grid-cols-12 sm:gap-4"><dt class="font-semibold text-muted sm:col-span-4">Open chat vs. structured output</dt><dd class="sm:col-span-8"><strong>Natural language in, structured and catalog-grounded recommendations out.</strong></dd></div>
+          <div class="grid gap-1 p-4 sm:grid-cols-12 sm:gap-4"><dt class="font-semibold text-muted sm:col-span-4">Autonomy vs. preview</dt><dd class="sm:col-span-8"><strong>Preview and approve</strong> before anything goes live.</dd></div>
+          <div class="grid gap-1 p-4 sm:grid-cols-12 sm:gap-4"><dt class="font-semibold text-muted sm:col-span-4">Speed vs. safety in agentic pacing</dt><dd class="sm:col-span-8"><strong>Automated anomaly detection and recovery,</strong> instead of manual monitoring or unsupervised automation.</dd></div>
+          <div class="grid gap-1 p-4 sm:grid-cols-12 sm:gap-4"><dt class="font-semibold text-muted sm:col-span-4">Global reach vs. local relevance</dt><dd class="sm:col-span-8"><strong>AI avatars and dubbing in 30+ languages,</strong> with content design guardrails.</dd></div>
+        </dl>
+        <p class="takeaway"><svg aria-hidden="true" class="mt-0.5 h-5 w-5 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Let people speak freely; have the system answer in structure.</span></p>
+      </section>
+
+      <section id="tiktok-solution" class="case-section">
+        <h3><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" /> <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" /> <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" /></svg>Final solution</h3>
+        <ul class="case-list">
+          <li><strong>TikTok Symphony Assistant:</strong> natural-language goal expression across Symphony, Creative Center, TikTok One and TikTok Shop.</li>
+          <li><strong>Products represented in dialogue:</strong> catalog-grounded recommendations and campaign and commerce setup completed inside the conversation.</li>
+          <li><strong>Generative visual merchandising,</strong> AI avatars and dubbing in 30+ languages.</li>
+          <li><strong>Real-time shopper recommendation journeys.</strong></li>
+          <li><strong>Human-in-the-loop supervision:</strong> preview and approval controls, plus automated anomaly recovery for budget and bid pacing.</li>
+        </ul>
+        <figure class="mt-6 rounded-2xl border border-line bg-stone p-4 sm:p-5">
+          <figcaption class="mb-3 text-sm font-semibold">From goal to live inside one conversation <span class="font-normal text-muted">(illustrative pattern diagram)</span></figcaption>
+          <ol class="grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <li class="flow-node">State the goal<span class="block text-xs font-normal text-muted">Plain language</span></li>
+            <li class="flow-node">See options<span class="block text-xs font-normal text-muted">Catalog-grounded</span></li>
+            <li class="flow-node border-review/50 bg-review-tint">Preview &amp; approve<span class="block text-xs font-normal text-review">Nothing live without a yes</span></li>
+            <li class="flow-node">Live<span class="block text-xs font-normal text-muted">Anomalies auto-recovered</span></li>
+          </ol>
+          <p class="mt-2 rounded-lg bg-approve-tint px-3 py-1.5 text-center text-sm font-medium text-approve">Every accept, edit and reject feeds acceptance-rate analytics</p>
+        </figure>
+        <p class="takeaway"><svg aria-hidden="true" class="mt-0.5 h-5 w-5 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>The whole path, from goal to live, happens in one conversation.</span></p>
+      </section>
+
+      <section id="tiktok-storyboard" class="case-section">
+        <h3><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m12.296 3.464 3.02 3.956" /> <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3z" /> <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /> <path d="m6.18 5.276 3.1 3.899" /></svg>UX storyboard</h3>
+        <p class="max-w-[46rem] text-ink/85">Ana is the growth marketer at an indie skincare brand that sells on TikTok Shop. Six moments take her from a one-line goal to a live, shoppable launch, and show the shopper who buys.</p>
+        <p class="mt-2 text-sm text-muted">Illustrative storyboard of the shipped patterns, with fictional people and data. Scenes are representational stock photos; screens are not production UI.</p>
+        <div class="sb-cols" aria-hidden="true"><span>Scene</span><span>Screen</span><span>What happens</span></div>
+        <ol class="sb-grid">
+          <li class="sb-row">
+            <div class="sb-head"><h4 class="sb-title"><span class="sb-num">1</span>Brief the assistant in one sentence</h4><span class="annot">Natural-language goal expression</span></div>
+            <figure class="sb-scene"><img src="img/sb-tiktok-1.jpg" alt="A creator at her desk with a laptop, microphone and phone on a tripod" loading="lazy" width="900" height="600" /></figure>
+            <div class="sb-wire-wrap"><div class="sb-wire" data-export="tiktok-1">
+              <div class="wb-bar"><span>Creative assistant</span><span>New launch</span></div>
+              <div class="wb-body">
+                <p class="wb-user">Launch our new SPF serum to Gen Z in the US and Mexico. $5k budget, drive Shop sales.</p>
+                <div class="wb-bot">
+                  <p>Here's what I understood:</p>
+                  <dl class="mt-0.5 grid grid-cols-2 gap-x-3 text-[11px]">
+                    <div><dt class="inline text-muted">Product:</dt> <dd class="inline">Daylight SPF Serum</dd></div>
+                    <div><dt class="inline text-muted">Markets:</dt> <dd class="inline">US, Mexico</dd></div>
+                    <div><dt class="inline text-muted">Budget:</dt> <dd class="inline">$5,000, 14 days</dd></div>
+                    <div><dt class="inline text-muted">Goal:</dt> <dd class="inline">Shop purchases</dd></div>
+                  </dl>
+                  <p class="mt-1 flex gap-1"><span class="wb-btn">Looks right</span><span class="wb-btn-q">Edit</span></p>
+                </div>
+              </div>
+            </div></div>
+            <div class="sb-text"><p class="sb-desc">Ana describes the launch in plain language. The assistant turns it into a structured brief and shows it back before doing anything.</p>
+            <p class="sb-trust mt-2.5"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Trust moment: she sees what it understood before it acts.</span></p></div>
+          </li>
+
+          <li class="sb-row">
+            <div class="sb-head"><h4 class="sb-title"><span class="sb-num">2</span>Ideas grounded in the real catalog</h4><span class="annot">Catalog-grounded recommendations</span></div>
+            <figure class="sb-scene"><img src="img/sb-tiktok-2.jpg" alt="Skincare products on a marble table beside a laptop" loading="lazy" width="900" height="600" /></figure>
+            <div class="sb-wire-wrap"><div class="sb-wire" data-export="tiktok-2">
+              <div class="wb-bar"><span>Creative assistant</span><span>Concepts</span></div>
+              <div class="wb-body">
+                <p>Three concepts, each tied to items in your Shop:</p>
+                <div class="grid grid-cols-3 gap-1.5">
+                  <div class="wb-card"><p class="font-semibold leading-tight">Morning routine in 15 seconds</p><p class="mt-1 rounded bg-stone px-1 text-[10px]">SPF Serum, $24</p></div>
+                  <div class="wb-card"><p class="font-semibold leading-tight">Beach day, before and after</p><p class="mt-1 rounded bg-stone px-1 text-[10px]">Serum + Lip bundle, $32</p></div>
+                  <div class="wb-card"><p class="font-semibold leading-tight">Shade test on three skin tones</p><p class="mt-1 rounded bg-stone px-1 text-[10px]">SPF Serum, $24</p></div>
+                </div>
+                <p class="text-[10.5px] text-muted">Only items in your catalog, with live price and stock.</p>
+              </div>
+            </div></div>
+            <div class="sb-text"><p class="sb-desc">Concepts arrive as cards tied to real catalog items with live price and stock, so nothing promotes a product that doesn't exist.</p>
+            <p class="sb-trust mt-2.5"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Trust moment: no invented products.</span></p></div>
+          </li>
+
+          <li class="sb-row">
+            <div class="sb-head"><h4 class="sb-title"><span class="sb-num">3</span>Generate and localize</h4><span class="annot">Generative merchandising, avatars, dubbing</span></div>
+            <figure class="sb-scene"><img src="img/sb-tiktok-3.jpg" alt="Video variants previewed in editing software on a laptop" loading="lazy" width="900" height="600" /></figure>
+            <div class="sb-wire-wrap"><div class="sb-wire" data-export="tiktok-3">
+              <div class="wb-bar"><span>Creative assistant</span><span>4 variants</span></div>
+              <div class="wb-body">
+                <p>Four variants ready. AI avatars and dubbing are labeled.</p>
+                <div class="grid grid-cols-4 gap-1.5">
+                  <div><div class="flex h-[62px] items-center justify-center rounded bg-ink/80 text-[13px] text-white">▶</div><p class="mt-0.5 text-[10.5px] font-semibold">English, avatar</p><p class="text-[10px] text-review">AI-generated</p></div>
+                  <div><div class="flex h-[62px] items-center justify-center rounded bg-ink/60 text-[13px] text-white">▶</div><p class="mt-0.5 text-[10.5px] font-semibold">Spanish, dubbed</p><p class="text-[10px] text-review">AI-generated</p></div>
+                  <div><div class="flex h-[62px] items-center justify-center rounded bg-ink/70 text-[13px] text-white">▶</div><p class="mt-0.5 text-[10.5px] font-semibold">English, captions</p><p class="text-[10px] text-muted">Brand footage</p></div>
+                  <div><div class="flex h-[62px] items-center justify-center rounded bg-ink/50 text-[13px] text-white">▶</div><p class="mt-0.5 text-[10.5px] font-semibold">Spanish, avatar</p><p class="text-[10px] text-review">AI-generated</p></div>
+                </div>
+              </div>
+            </div></div>
+            <div class="sb-text"><p class="sb-desc">The assistant generates variants for each market with AI avatars and dubbing, and labels every generated piece.</p>
+            <p class="sb-trust mt-2.5"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Trust moment: generated content is labeled, never disguised.</span></p></div>
+          </li>
+
+          <li class="sb-row">
+            <div class="sb-head"><h4 class="sb-title"><span class="sb-num">4</span>Preview, approve, launch in place</h4><span class="annot">Preview and approval, in-dialogue setup</span></div>
+            <figure class="sb-scene"><img src="img/sb-tiktok-4.jpg" alt="Hands on a laptop keyboard next to a video editor" loading="lazy" width="900" height="600" /></figure>
+            <div class="sb-wire-wrap"><div class="sb-wire" data-export="tiktok-4">
+              <div class="wb-bar"><span>Creative assistant</span><span>Ready to launch</span></div>
+              <div class="wb-body">
+                <p><span class="font-semibold">4 creatives, $5,000 over 14 days.</span> Pacing automatic. Products linked to Shop.</p>
+                <ul class="space-y-0.5 text-[11px]">
+                  <li><span class="wb-ok">✓</span> Brand safety checks passed</li>
+                  <li><span class="wb-ok">✓</span> Product links live, in stock</li>
+                  <li><span class="font-semibold text-review">!</span> "All-day protection" is a claim. Confirm it or edit it.</li>
+                </ul>
+                <p class="flex flex-wrap gap-1 pt-0.5"><span class="wb-btn">Confirm claim and launch</span><span class="wb-btn-q">Edit claim</span></p>
+              </div>
+            </div></div>
+            <div class="sb-text"><p class="sb-desc">Everything is summarized in one place. Guardrails flag a product claim for her to confirm, and the campaign launches from the conversation.</p>
+            <p class="sb-trust mt-2.5"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Trust moment: nothing goes live without a yes.</span></p></div>
+          </li>
+
+          <li class="sb-row">
+            <div class="sb-head"><h4 class="sb-title"><span class="sb-num">5</span>The shopper's moment</h4><span class="annot">Real-time shopper recommendations</span></div>
+            <figure class="sb-scene"><img src="img/sb-tiktok-5.jpg" alt="A young woman outdoors looking at her phone" loading="lazy" width="900" height="600" /></figure>
+            <div class="sb-wire-wrap"><div class="sb-wire" data-export="tiktok-5">
+              <div class="wb-bar"><span>Shopper's feed</span><span>Mexico</span></div>
+              <div class="flex gap-3 p-2.5">
+                <div class="relative h-[128px] w-[78px] shrink-0 overflow-hidden rounded-lg bg-ink/75">
+                  <p class="absolute left-1.5 top-1.5 text-[9.5px] leading-tight text-white">Mi rutina de mañana</p>
+                  <p class="absolute right-1 top-1.5 text-[8.5px] text-white/80">IA</p>
+                  <div class="absolute inset-x-1 bottom-1 rounded bg-white px-1 py-0.5 text-[9px] leading-tight"><span class="font-semibold">SPF Serum</span><br>$24 <span class="font-semibold text-approve">Ver</span></div>
+                </div>
+                <div class="space-y-1.5 text-[11px]">
+                  <p><span class="font-semibold">Shown to</span> shoppers browsing sun care, in Spanish.</p>
+                  <p><span class="font-semibold">Product card</span> rides on the video: real item, live price.</p>
+                  <p><span class="font-semibold">One tap</span> opens the product in Shop, without leaving the feed.</p>
+                </div>
+              </div>
+            </div></div>
+            <div class="sb-text"><p class="sb-desc">A shopper in Mexico sees the dubbed video with the product card attached, recommended in real time, and taps straight into Shop.</p>
+            <p class="sb-trust mt-2.5"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Trust moment: local, labeled, and one tap from the real product.</span></p></div>
+          </li>
+
+          <li class="sb-row">
+            <div class="sb-head"><h4 class="sb-title"><span class="sb-num">6</span>Pacing goes wrong, and recovers</h4><span class="annot">Automated anomaly recovery</span></div>
+            <figure class="sb-scene"><img src="img/sb-tiktok-6.jpg" alt="A woman reading her phone in a dark room at night" loading="lazy" width="900" height="600" /></figure>
+            <div class="sb-wire-wrap"><div class="sb-wire" data-export="tiktok-6">
+              <div class="wb-bar"><span>Creative assistant</span><span>Day 3 update</span></div>
+              <div class="wb-body">
+                <div class="wb-bot">
+                  <p>Spend spiked 3x in Mexico overnight. I paused the spike and moved budget back to plan. You're still on budget.</p>
+                  <p class="mt-1 text-[10.5px] text-muted">2:10 am spike found, 2:12 paused, 2:15 rebalanced</p>
+                  <p class="mt-1 flex gap-1"><span class="wb-btn-q">Undo</span><span class="wb-btn-q">See what happened</span></p>
+                </div>
+              </div>
+            </div></div>
+            <div class="sb-text"><p class="sb-desc">When automated pacing misbehaves, the agent catches it, fixes it, and reports exactly what it did, with undo.</p>
+            <p class="sb-trust mt-2.5"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Trust moment: the agent explains its actions and hands back control.</span></p></div>
+          </li>
+        </ol>
+      </section>
+
+      <section id="tiktok-results" class="case-section">
+        <h3><svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6" /> <path d="m22 7-8.5 8.5-5-5L2 17" /></svg>Results</h3>
+        <ul class="case-list">
+          <li><strong>+37% purchase intent</strong> and <strong>+38% brand favorability.</strong></li>
+          <li><strong>Shipped across surfaces</strong> serving 1B+ users and $33.2B in TikTok Shop GMV.</li>
+          <li><strong>Experimentation rigor:</strong> UX decisions tied to A/B tests and acceptance-rate analytics.</li>
+        </ul>
+        <p class="takeaway"><svg aria-hidden="true" class="mt-0.5 h-5 w-5 shrink-0 text-approve" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>For Microsoft Commerce: Copilot shopping asks the same questions. How is intent expressed and refined, how do products appear in dialogue, and how does a purchase complete without leaving the conversation?</span></p>
+      </section>
+
+      <div class="mt-10 flex flex-wrap justify-between gap-3 border-t border-line pt-6">
+        <button type="button" class="btn-quiet" data-goto="walmart">Previous: Walmart Connect</button>
+        <button type="button" class="btn-primary" data-close>Back to portfolio</button>
+      </div>
+    </article>
+  </dialog>
+
+  <script>
+    (function () {
+      "use strict";
+
+      /* ---------- Case study modals ---------- */
+      var CASES = ["tagor", "walmart", "tiktok"];
+      var current = null;
+      var root = document.documentElement;
+
+      function dialogFor(id) { return document.getElementById("case-" + id); }
+
+      function show(id) {
+        var d = dialogFor(id);
+        if (!d) return;
+        if (current && current !== id) {
+          var prev = dialogFor(current);
+          if (prev && prev.open) prev.close();
+        }
+        if (!d.open) d.showModal();
+        d.scrollTop = 0;
+        current = id;
+        root.classList.add("modal-open");
+        var heading = d.querySelector("h2");
+        if (heading) { heading.setAttribute("tabindex", "-1"); heading.focus({ preventScroll: true }); }
+      }
+
+      function hideAll() {
+        CASES.forEach(function (id) {
+          var d = dialogFor(id);
+          if (d && d.open) d.close();
+        });
+        current = null;
+        root.classList.remove("modal-open");
+      }
+
+      function openCase(id) {
+        show(id);
+        if (location.hash !== "#" + id) history.pushState({ caseId: id }, "", "#" + id);
+      }
+
+      function requestClose() {
+        if (history.state && history.state.caseId) {
+          history.back(); // popstate closes the dialog
+        } else {
+          history.replaceState(null, "", location.pathname + location.search);
+          hideAll();
+        }
+      }
+
+      function caseFromHash() {
+        var id = location.hash.replace("#", "");
+        return CASES.indexOf(id) > -1 ? id : null;
+      }
+
+      window.addEventListener("popstate", function () {
+        var id = caseFromHash();
+        if (id) show(id); else hideAll();
+      });
+
+      document.addEventListener("click", function (e) {
+        var opener = e.target.closest("[data-open]");
+        if (opener) { openCase(opener.getAttribute("data-open")); return; }
+
+        var closer = e.target.closest("[data-close]");
+        if (closer) { requestClose(); return; }
+
+        var goto = e.target.closest("[data-goto]");
+        if (goto) {
+          var next = goto.getAttribute("data-goto");
+          history.replaceState({ caseId: next }, "", "#" + next);
+          show(next);
+          return;
+        }
+
+        var jump = e.target.closest("[data-jump]");
+        if (jump) {
+          var target = document.getElementById(jump.getAttribute("data-jump"));
+          if (target) target.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+        }
+      });
+
+      CASES.forEach(function (id) {
+        var d = dialogFor(id);
+        // Escape key
+        d.addEventListener("cancel", function (e) { e.preventDefault(); requestClose(); });
+        // Click on the backdrop (outside the dialog box)
+        d.addEventListener("click", function (e) {
+          if (e.target !== d) return;
+          var r = d.getBoundingClientRect();
+          var inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+          if (!inside) requestClose();
+        });
+      });
+
+      // Deep link: yoursite.github.io/#walmart opens that case study
+      var initial = caseFromHash();
+      if (initial) show(initial);
+
+      /* ---------- Hero pattern sketch: approve and undo ---------- */
+      var approve = document.getElementById("demo-approve");
+      var undo = document.getElementById("demo-undo");
+      var actions = document.getElementById("demo-actions");
+      var done = document.getElementById("demo-done");
+      var doneText = document.getElementById("demo-done-text");
+      var size = document.getElementById("demo-size");
+      var status = document.getElementById("demo-status");
+      var cancelled = false;
+
+      approve.addEventListener("click", function () {
+        actions.classList.add("demo-hidden");
+        done.classList.remove("demo-hidden");
+        size.disabled = true;
+        doneText.textContent = "Order placed: Ridgeline Grip, size " + size.value + ", $129. You can undo until it ships tomorrow.";
+        undo.textContent = "Undo order";
+        status.textContent = "Order placed. Undo is available until it ships.";
+        cancelled = false;
+        undo.focus();
+      });
+
+      undo.addEventListener("click", function () {
+        if (!cancelled) {
+          doneText.textContent = "Order cancelled. Your card wasn't charged.";
+          undo.textContent = "Start over";
+          status.textContent = "Order cancelled. Your card wasn't charged.";
+          cancelled = true;
+        } else {
+          done.classList.add("demo-hidden");
+          actions.classList.remove("demo-hidden");
+          size.disabled = false;
+          status.textContent = "Back to the approval step.";
+          approve.focus();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
